@@ -1,0 +1,3 @@
+# Ignore specific extracted databases with embedded secrets
+SelectedDBs/main.db
+SelectedDBs/main.db-journal
