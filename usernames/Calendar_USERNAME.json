@@ -1,0 +1,19 @@
+{
+    "database_file": "D:\\ExtractedDBs\\Calendar.sqlitedb",
+    "target_entity": "USERNAME",
+    "status": "success",
+    "evidence_count": 1,
+    "evidence": [
+        "ottomatik1234"
+    ],
+    "source_columns": [
+        "display_name",
+        "address",
+        "first_name",
+        "last_name",
+        "contact_id",
+        "account_id"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

@@ -1,0 +1,21 @@
+{
+    "database_file": "D:\\ExtractedDBs\\History.db",
+    "target_entity": "USERNAME",
+    "status": "success",
+    "evidence_count": 4,
+    "evidence": [
+        "17eBu7RgHUeusRyLZr6u3cCjwmmQprK28K",
+        "a&e nails",
+        "hersheypark hours",
+        "hersheypark tickets"
+    ],
+    "source_columns": [
+        "url",
+        "title",
+        "key",
+        "listener_name",
+        "event_type"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}
