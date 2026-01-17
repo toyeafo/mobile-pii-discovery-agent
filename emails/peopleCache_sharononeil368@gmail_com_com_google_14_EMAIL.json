@@ -1,0 +1,20 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\peopleCache_sharononeil368@gmail.com_com.google_14.db",
+    "target_entity": "EMAIL",
+    "status": "success",
+    "evidence_count": 2,
+    "evidence": [
+        "heather@cellebrite.com",
+        "hmahalik@gmail.com"
+    ],
+    "source_columns": [
+        "affinity_response_context",
+        "proto_bytes",
+        "context_id",
+        "id",
+        "candidate_id",
+        "value"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

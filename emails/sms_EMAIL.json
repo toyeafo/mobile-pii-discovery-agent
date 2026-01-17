@@ -1,0 +1,23 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\sms.db",
+    "target_entity": "EMAIL",
+    "status": "success",
+    "evidence_count": 6,
+    "evidence": [
+        "aniulka616@hotmail.com",
+        "josephphw3r5@outlook.com",
+        "jreynoldscbdemo+this.is.secret@gmail.com",
+        "jthskp131699@icloud.com",
+        "sousiezorjrc@outlook.com",
+        "sweeneyfrank594@gmail.com"
+    ],
+    "source_columns": [
+        "message_id",
+        "guid",
+        "uncanonicalized_id",
+        "key",
+        "chat_identifier"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

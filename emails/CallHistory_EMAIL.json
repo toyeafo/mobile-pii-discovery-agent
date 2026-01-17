@@ -1,0 +1,20 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\CallHistory.sqlite",
+    "target_entity": "EMAIL",
+    "status": "success",
+    "evidence_count": 3,
+    "evidence": [
+        "14847353029@s.whatsapp.net",
+        "19199037779@s.whatsapp.net",
+        "923402582955@s.whatsapp.net"
+    ],
+    "source_columns": [
+        "ZLINKTOKEN",
+        "ZCALLIDSTRING",
+        "ZJIDSTRING",
+        "ZCALLCREATORJIDSTRING",
+        "ZCHATJIDSTRING"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}
