@@ -1,0 +1,14 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\SBrowser.db",
+    "target_entity": "USERNAME",
+    "status": "success",
+    "evidence_count": 1,
+    "evidence": [
+        "sharononeil368"
+    ],
+    "source_columns": [
+        "ACCOUNT_NAME"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}
