@@ -1,0 +1,29 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\main.db",
+    "target_entity": "PHONE",
+    "status": "success",
+    "evidence_count": 15,
+    "evidence": [
+        "+12065937224",
+        "+12065937224",
+        "+18624338328",
+        "+19199037779",
+        "+18085096467",
+        "+15713298742",
+        "+12028177932",
+        "+12025692832",
+        "+15713349815",
+        "+15715917168",
+        "+16106046786",
+        "+16263678865",
+        "+18056377243",
+        "+81367430271",
+        "+17423794330"
+    ],
+    "source_columns": [
+        "phone",
+        "rawPhone"
+    ],
+    "attempts_used": 2,
+    "final_phase": "extraction"
+}
