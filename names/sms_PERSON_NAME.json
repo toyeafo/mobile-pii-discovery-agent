@@ -1,0 +1,26 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\sms.db",
+    "target_entity": "PERSON_NAME",
+    "status": "success",
+    "evidence_count": 11,
+    "evidence": [
+        "Anya",
+        "William",
+        "Eddie V",
+        "Otto",
+        "Sharon Oneil",
+        "Anna",
+        "Tracy",
+        "Joe Church",
+        "Ella Rutman Doligo",
+        "Ronen Engler",
+        "Ed Venture"
+    ],
+    "source_columns": [
+        "text",
+        "display_name",
+        "id"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

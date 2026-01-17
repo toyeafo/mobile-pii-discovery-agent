@@ -1,0 +1,20 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\CallHistory.sqlite",
+    "target_entity": "PHONE",
+    "status": "success",
+    "evidence_count": 3,
+    "evidence": [
+        "14847353029",
+        "19199037779",
+        "923402582955"
+    ],
+    "source_columns": [
+        "ZINCOMING",
+        "ZBYTESRECEIVED",
+        "ZJIDSTRING",
+        "ZCALLCREATORJIDSTRING",
+        "ZCHATJIDSTRING"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

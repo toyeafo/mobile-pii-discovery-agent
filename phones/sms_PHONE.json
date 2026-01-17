@@ -1,0 +1,21 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\sms.db",
+    "target_entity": "PHONE",
+    "status": "success",
+    "evidence_count": 7,
+    "evidence": [
+        "+1 (844) 407-4819",
+        "800-331-0500",
+        "611",
+        "+15044930650",
+        "+12109299940",
+        "+15797987022",
+        "+1.214.547.2300"
+    ],
+    "source_columns": [
+        "text",
+        "part_text"
+    ],
+    "attempts_used": 1,
+    "final_phase": "extraction"
+}

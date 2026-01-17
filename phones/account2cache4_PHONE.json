@@ -1,0 +1,10 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\account2cache4.db",
+    "target_entity": "PHONE",
+    "status": "no_evidence_found",
+    "evidence_count": 0,
+    "evidence": [],
+    "source_columns": [],
+    "attempts_used": 3,
+    "final_phase": "discovery"
+}

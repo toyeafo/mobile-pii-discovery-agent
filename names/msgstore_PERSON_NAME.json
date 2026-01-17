@@ -1,0 +1,16 @@
+{
+    "database_file": "C:\\Users\\SAfolabi\\Code\\ExtractedDBs\\msgstore.db",
+    "target_entity": "PERSON_NAME",
+    "status": "success",
+    "evidence_count": 1,
+    "evidence": [
+        "Mary Garcia"
+    ],
+    "source_columns": [
+        "message_mentions.display_name",
+        "jid.user",
+        "message_vcard.vcard"
+    ],
+    "attempts_used": 2,
+    "final_phase": "extraction"
+}
