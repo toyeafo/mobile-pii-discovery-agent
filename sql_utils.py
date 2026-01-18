@@ -2,7 +2,7 @@ import re
 import json
 
 
-def rows_to_text(rows, limit=None, max_chars=5000, cell_max=1000):
+def rows_to_text(rows, limit=None, max_chars=500000, cell_max=100):
     """
     Converts SQL rows to text with safety limits for LLM context.
     - limit: Max number of rows to process.
@@ -17,11 +17,15 @@ def rows_to_text(rows, limit=None, max_chars=5000, cell_max=1000):
     target_rows = rows[:limit] if limit else rows
     
     for r in target_rows:
-        row_str = ",".join(
-            (str(c)[:cell_max] + "..." if len(str(c)) > cell_max else str(c))
-            for c in r if c is not None
-        )
-        out.append(row_str)
+        print(f"Test [ROW DATA] {r}")
+        if r is None:
+            continue
+        s = str(r).strip()  # trim whitespace first
+        if len(s) == 0:
+            continue
+        if len(s) > cell_max:
+            s = s[:cell_max] + "..."
+        out.append(s)
     
     final_text = "\n".join(out)
     
