@@ -1,6 +1,32 @@
 import re
 import json
+import sys
 
+
+
+def extract_tables_with_aliases(select_sql: str) -> dict[str, str]:
+    """
+    Returns mapping alias_or_table -> real_table
+    Example: FROM messages m JOIN contacts c -> {"m":"messages","messages":"messages","c":"contacts","contacts":"contacts"}
+    """
+    TABLE_TOKEN = re.compile(
+    r'\b(?:FROM|JOIN)\s+("?[A-Za-z_][A-Za-z0-9_]*"?)'
+    r'(?:\s+(?:AS\s+)?("?[A-Za-z_][A-Za-z0-9_]*"?))?',
+    re.IGNORECASE
+    )
+    m = {}
+    for tbl, alias in TABLE_TOKEN.findall(select_sql):
+        tbl = tbl.strip('"')
+        if alias:
+            alias = alias.strip('"')
+            m[alias] = tbl
+        m[tbl] = tbl
+    return m
+
+def extract_single_table(select_sql: str) -> str | None:
+    m = extract_tables_with_aliases(select_sql)  # dict alias->table and table->table
+    tables = sorted(set(m.values()))
+    return tables[0] if len(tables) == 1 else None
 
 def rows_to_text(rows, limit=None, max_chars=500000, cell_max=1000):
     """
@@ -58,6 +84,8 @@ def regexp(expr, item):
         regexp("[a-z0-9._%+-]+@[a-z0-9.-]+", None)
         → False
     """
+    _BIDI_CTRL_RE = re.compile(r"[\u200e\u200f\u202a-\u202e\u2066-\u2069]")
+    
     # 1. Handle NULLs (None in Python)
     if item is None:
         return False
@@ -69,10 +97,18 @@ def regexp(expr, item):
         else:
             item = str(item)
             
+        # Clean invisible marks + whitespace
+        item = _BIDI_CTRL_RE.sub("", item)
+        item = item.replace("\u00a0", " ")
+        item = re.sub(r"\s+", " ", item).strip()
+        
         # 3. Compile and search
         return re.search(expr, item, re.IGNORECASE) is not None
-    except Exception:
-        # 4. If anything else goes wrong, don't crash SQLite
+    except Exception as e:
+        # Log error but don't crash SQLite
+        preview = repr(item)[:200]  # avoid huge spam
+        expr_preview = repr(expr)[:200]
+        print(f"[REGEXP ERROR] {type(e).__name__}: {e} | expr={expr_preview} | item={preview}", file=sys.stderr)
         return False
 
 
