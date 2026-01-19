@@ -17,7 +17,7 @@ def rows_to_text(rows, limit=None, max_chars=500000, cell_max=1000):
     target_rows = rows[:limit] if limit else rows
     
     for r in target_rows:
-        print(f"Test [ROW DATA] {r}")
+        # print(f"Test [ROW DATA] {r}")
         if r is None:
             continue
         s = str(r).strip()  # trim whitespace first
