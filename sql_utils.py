@@ -31,6 +31,27 @@ def extract_single_table(select_sql: str) -> str | None:
     tables = sorted(set(m.values()))
     return tables[0] if len(tables) == 1 else None
 
+
+
+
+def _bytes_to_display(b: bytes, max_len: int) -> str:
+    # Try UTF-8 first (common for text stored as BLOB)
+    _PRINTABLE_RE = re.compile(r"^[\x09\x0a\x0d\x20-\x7e]+$")  # tabs/newlines/spaces + printable ASCII
+    try:
+        s = b.decode("utf-8", errors="replace")
+        s = s.strip()
+        # If it is mostly printable, keep it
+        if s and _PRINTABLE_RE.match(s[:min(len(s), 200)]):
+            return s[:max_len] + ("..." if len(s) > max_len else "")
+    except Exception:
+        pass
+
+    # Otherwise show hex preview (compact, honest)
+    hx = b.hex()
+    if len(hx) > max_len:
+        return hx[:max_len] + "..."
+    return hx
+
 def rows_to_text(rows, limit=None, max_chars=500000, cell_max=1000):
     """
     Converts SQL rows to text with safety limits for LLM context.
@@ -38,35 +59,47 @@ def rows_to_text(rows, limit=None, max_chars=500000, cell_max=1000):
     - max_chars: Hard limit for the total string length.
     - cell_max: Max length for any single column value.
     """
+
     if not rows:
         return ""
-    
+
     out = []
-    # 1. Row-level limiting
     target_rows = rows[:limit] if limit else rows
-    
+
     for r in target_rows:
-        # print(f"Test [ROW DATA] {r}")
         if r is None:
             continue
-        s = str(r).strip()  # trim whitespace first
-        if len(s) == 0:
-            continue
-        if len(s) > cell_max:
-            s = s[:cell_max] + "..."
-        out.append(s)
-    
+
+        # Handle tuples/rows cell-by-cell so bytes do not become "b'...'"
+        if isinstance(r, (tuple, list)):
+            cells = []
+            for v in r:
+                if isinstance(v, bytes):
+                    cells.append(_bytes_to_display(v, cell_max))
+                else:
+                    sv = "" if v is None else str(v).strip()
+                    if len(sv) > cell_max:
+                        sv = sv[:cell_max] + "..."
+                    cells.append(sv)
+            s = "(" + ", ".join(cells) + ")"
+        else:
+            # Non-tuple row
+            if isinstance(r, bytes):
+                s = _bytes_to_display(r, cell_max)
+            else:
+                s = str(r).strip()
+                if len(s) > cell_max:
+                    s = s[:cell_max] + "..."
+
+        if s:
+            out.append(s)
+
     final_text = "\n".join(out)
-    
-    # 2. Final global character limit safety check
+
     if len(final_text) > max_chars:
         return final_text[:max_chars] + "\n... [DATA TRUNCATED] ..."
-    
-    # print(f"[ROWS TO TEXT] Input: {len(rows)} rows | Output: {len(final_text)} chars")
-    # Optional: print only the first 200 characters of the text to keep logs clean
-    # print(f"[PREVIEW]: {final_text[:200]}...")
-    return final_text
 
+    return final_text
 
 def regexp(expr, item):
     """
@@ -152,6 +185,18 @@ def normalize_sql(sql: str) -> str:
         sql = sql[3:].strip()
 
     return sql
+
+def upgrade_sql_remove_limit(sql: str) -> str:
+    _LIMIT_RE = re.compile(r"\s+LIMIT\s+\d+\s*;?\s*$", re.IGNORECASE)
+    _LIMIT_ANYWHERE_RE = re.compile(r"\s+LIMIT\s+\d+\s*(?=($|\n|UNION|ORDER|GROUP|HAVING))", re.IGNORECASE)  
+    # Remove LIMIT clauses robustly (including UNION queries)
+    upgraded = re.sub(r"\bLIMIT\s+\d+\b", "", sql, flags=re.IGNORECASE)
+    # Clean up extra whitespace
+    upgraded = re.sub(r"\s+\n", "\n", upgraded)
+    upgraded = re.sub(r"\n\s+\n", "\n", upgraded)
+    upgraded = re.sub(r"\s{2,}", " ", upgraded).strip()
+    return upgraded
+
 
 def safe_json_loads(text: str, default):
     """
@@ -319,16 +364,25 @@ def print_db_path_report(db_paths: List[Path], missing: List[str], not_sqlite: L
         for x in not_sqlite:
             print("  -", x)
 
-def save_jsonl(all_results, out_dir):
+def save_jsonl(results, out_dir: Path, db_path: str) -> Path:
+    """
+    Save one JSONL file per database.
+    Filename includes database stem + UTC timestamp.
+    Converts bytes/BLOBs to JSON-safe base64.
+    """
+    out_dir.mkdir(exist_ok=True)
+
     ts = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    out_path = out_dir / f"evidence_{ts}.jsonl"
+    db_stem = Path(db_path).stem
+    out_path = out_dir / f"PII_{db_stem}_{ts}.jsonl"
 
     with out_path.open("w", encoding="utf-8") as f:
-        for r in all_results:
-            f.write(json.dumps(r, ensure_ascii=False) + "\n")
+        for r in results:
+            f.write(json.dumps(json_safe(r), ensure_ascii=False) + "\n")
 
     print(f"Wrote: {out_path.resolve()}")
     return out_path
+
 
 def load_config_yaml(path: Path) -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -347,3 +401,19 @@ def load_vars_from_py(py_path: Path, *var_names: str):
         out[name] = getattr(mod, name)
     return out
 
+import base64
+
+# sanitize each result dict before writing JSONL
+def json_safe(obj):
+    if isinstance(obj, bytes):
+        # base64 keeps it compact and reversible
+        return {"__bytes_b64__": base64.b64encode(obj).decode("ascii")}
+        # or use hex:
+        # return {"__bytes_hex__": obj.hex()}
+    if isinstance(obj, tuple):
+        return [json_safe(x) for x in obj]
+    if isinstance(obj, list):
+        return [json_safe(x) for x in obj]
+    if isinstance(obj, dict):
+        return {k: json_safe(v) for k, v in obj.items()}
+    return obj
