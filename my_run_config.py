@@ -1,8 +1,9 @@
 db_files = [
-    "test2.db",
+    # "test2.db",
+    # "users.db",
     # "A1_commerce.db",
     # "A1_msgstore.db",
-    # "A1_wa.db",
+    "A1_wa.db",
     # "A2_core.db",
     # "A2_journal.db",
     # "A2_main.db",
@@ -29,24 +30,24 @@ db_files = [
 
 PII_CONFIG = {
     "EMAIL": {
-        "type":"email",
+        "type":"email address",
         "regex": r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}",
-        "desc": "valid email addresses. For example: username@domain.tld"
+        "desc": "a unique identifier for a destination to which electronic mail (email) can be sent and received over the internet or a private network"
     },
     "PHONE": {
         "type":"phone number",
         "regex": r"\+?[0-9]{1,4}[- .]?\(?[0-9]{1,3}?\)?[- .]?[0-9]{1,4}[- .]?[0-9]{1,4}[- .]?[0-9]{1,9}",
-        "desc": "international or local telephone numbers"
+        "desc": "a unique sequence of digits assigned to a specific telephone line or mobile device within a public or private telephone network"
     },
     "USERNAME": {
         "type":"username",
         "regex": r"\b[a-zA-Z][a-zA-Z0-9._-]{2,51}\b",
-        "desc": "application-specific login usernames created by users for login purposes"
+        "desc": "a username (also called a login name, user ID, or account name) is a unique string of characters that identifies a user on a computer system, website, application, or online platform"
     },
     "PERSON_NAME": {
-        "type":"person name",
+        "type":"person's name",
         "regex": r"[A-Za-z][A-Za-z\s\.\-]{1,50}",
-        "desc": "loosely structured human name-like strings"
+        "desc": "a loosely structured human name-like strings that typically consist of a first name, a first name and a last name, and may also include middle names, initials, prefixes (e.g., Mr., Dr.), and suffixes (e.g., Jr., Sr.)"
     }
 }
 
