@@ -1,0 +1,8 @@
+db_dir: selectedDBs
+out_dir: batch_results
+config_py: my_run_config.py
+pii_targets:
+  - EMAIL
+  - PHONE
+  - USERNAME
+  - PERSON_NAME

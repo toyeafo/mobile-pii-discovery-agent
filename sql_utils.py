@@ -3,7 +3,9 @@ import json
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
-
+import yaml
+import importlib.util
+from typing import List, Tuple
 
 def extract_tables_with_aliases(select_sql: str) -> dict[str, str]:
     """
@@ -280,26 +282,6 @@ def is_sqlite_file(p: Path) -> bool:
             return f.read(16) == b"SQLite format 3\x00"
     except Exception:
         return False
-    
-    
-from pathlib import Path
-import importlib.util
-from typing import List, Tuple
-
-def load_db_files_list(py_path: Path, var_name: str = "db_files") -> List[str]:
-    """Load a list variable (default: db_files) from a .py file."""
-    spec = importlib.util.spec_from_file_location(py_path.stem, py_path)
-    if spec is None or spec.loader is None:
-        raise ValueError(f"Cannot load module from {py_path}")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)  # type: ignore
-
-    if not hasattr(mod, var_name):
-        raise AttributeError(f"{py_path} does not define `{var_name}`")
-    value = getattr(mod, var_name)
-    if not isinstance(value, list):
-        raise TypeError(f"`{var_name}` must be a list, got {type(value)}")
-    return value
 
 def build_db_paths(
     db_dir: Path,
@@ -347,3 +329,21 @@ def save_jsonl(all_results, out_dir):
 
     print(f"Wrote: {out_path.resolve()}")
     return out_path
+
+def load_config_yaml(path: Path) -> dict:
+    return yaml.safe_load(path.read_text(encoding="utf-8"))
+
+def load_vars_from_py(py_path: Path, *var_names: str):
+    spec = importlib.util.spec_from_file_location(py_path.stem, py_path)
+    if spec is None or spec.loader is None:
+        raise ValueError(f"Cannot load module from {py_path}")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)  # type: ignore
+
+    out = {}
+    for name in var_names:
+        if not hasattr(mod, name):
+            raise AttributeError(f"{py_path} does not define `{name}`")
+        out[name] = getattr(mod, name)
+    return out
+
