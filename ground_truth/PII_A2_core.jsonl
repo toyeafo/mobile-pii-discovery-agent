@@ -1,0 +1,4 @@
+{"db_path": "core.db", "PII Type": "Username", "PII": ["oneil3607", "oneil3607"], "Num_of_PII": 2, "source_columns": ["textVal"]}
+{"db_path": "core.db", "PII Type": "Name", "PII": ["Sharon Oneil"], "Num_of_PII": 1, "source_columns": ["textVal"]}
+{"db_path": "core.db", "PII Type": "Email", "PII": ["sharononeil368@gmail.com"], "Num_of_PII": 1, "source_columns": ["textVal"]}
+{"db_path": "core.db", "PII Type": "Phone", "PII": ["18624338329"], "Num_of_PII": 1, "source_columns": ["textVal"]}
