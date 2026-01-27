@@ -52,7 +52,7 @@ def _bytes_to_display(b: bytes, max_len: int) -> str:
         return hx[:max_len] + "..."
     return hx
 
-def rows_to_text(rows, limit=None, max_chars=500000, cell_max=1000):
+def rows_to_text(rows, limit=None, max_chars=500000, cell_max=700):
     """
     Converts SQL rows to text with safety limits for LLM context.
     - limit: Max number of rows to process.

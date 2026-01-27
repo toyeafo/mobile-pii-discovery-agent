@@ -6,3 +6,4 @@ pii_targets:
   - PHONE
   - USERNAME
   - PERSON_NAME
+  - POSTAL_ADDRESS
