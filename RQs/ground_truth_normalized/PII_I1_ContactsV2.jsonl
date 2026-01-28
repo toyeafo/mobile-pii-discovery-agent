@@ -1,0 +1,2 @@
+{"db_path": "ContactsV2.sqlite", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["zfullname"], "Num_of_source_columns": 1}
+{"db_path": "ContactsV2.sqlite", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["zphonenumber"], "Num_of_source_columns": 1}

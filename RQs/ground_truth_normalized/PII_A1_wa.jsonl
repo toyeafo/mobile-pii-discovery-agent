@@ -1,0 +1,8 @@
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["number"], "Num_of_source_columns": 1}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["given_name+family_name", "sort_name"], "Num_of_source_columns": 2}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["display_name"], "Num_of_source_columns": 1}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["number"], "Num_of_source_columns": 1}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["display_name", "wa_name"], "Num_of_source_columns": 2}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["given_name+family_name", "sort_name"], "Num_of_source_columns": 2}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["verified_name"], "Num_of_source_columns": 1}
+{"db_path": "wa.db", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["creator_name"], "Num_of_source_columns": 1}
