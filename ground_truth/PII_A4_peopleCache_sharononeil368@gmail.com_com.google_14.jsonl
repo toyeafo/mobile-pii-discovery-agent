@@ -1,6 +1,0 @@
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Email", "PII": ["heather@cellebrite.com", "hmahalik@gmail.com"], "Num_of_PII": 2, "source_columns": ["value"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Username", "PII": ["heather", "hmahalik", "Bo"], "Num_of_PII": 3, "source_columns": ["value"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Phone", "PII": ["17423794330"], "Num_of_PII": 1, "source_columns": ["value"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Email", "PII": ["heather@cellebrite.com", "hmahalik@gmail.com"], "Num_of_PII": 2, "source_columns": ["c1value"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Username", "PII": ["heather", "hmahalik", "Bo"], "Num_of_PII": 3, "source_columns": ["c1value"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A4_peopleCache_sharononeil368@gmail.com_com.google_14.db", "PII Type": "Phone", "PII": ["17423794330"], "Num_of_PII": 1, "source_columns": ["c1value"], "num_of_source_columns": 1}

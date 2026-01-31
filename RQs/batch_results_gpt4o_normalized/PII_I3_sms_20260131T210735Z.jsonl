@@ -1,0 +1,5 @@
+{"db_path": "selectedDBs\\I3_sms.db", "PII_type": "EMAIL", "PII": ["ottomatik1234@gmail.com"], "Num_of_PII": 1, "source_columns": ["message.text", "chat.account_login", "kvtable.key", "attachment.guid", "chat.display_name"], "Num_of_source_columns": 5}
+{"db_path": "selectedDBs\\I3_sms.db", "PII_type": "PHONE", "PII": [], "Num_of_PII": 0, "source_columns": ["message.text", "attachment.guid", "chat.chat_identifier", "chat.account_login", "chat.display_name", "handle.person_centric_id"], "Num_of_source_columns": 6}
+{"db_path": "selectedDBs\\I3_sms.db", "PII_type": "USERNAME", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I3_sms.db", "PII_type": "PERSON_NAME", "PII": ["anya", "william", "eddie v", "otto", "tracy", "anna", "ronen engler", "joe church", "ella rutman doligo", "sharon oneil"], "Num_of_PII": 10, "source_columns": ["chat.display_name", "handle.id", "message.text"], "Num_of_source_columns": 3}
+{"db_path": "selectedDBs\\I3_sms.db", "PII_type": "POSTAL_ADDRESS", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}

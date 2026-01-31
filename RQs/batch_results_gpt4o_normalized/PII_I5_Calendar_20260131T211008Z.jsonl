@@ -1,0 +1,5 @@
+{"db_path": "selectedDBs\\I5_Calendar.sqlitedb", "PII_type": "EMAIL", "PII": ["ottomatik1234@gmail.com"], "Num_of_PII": 1, "source_columns": ["alarm.email_address", "calendar.shared_owner_address", "calendar.self_identity_email", "calendar.owner_identity_email"], "Num_of_source_columns": 4}
+{"db_path": "selectedDBs\\I5_Calendar.sqlitedb", "PII_type": "PHONE", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I5_Calendar.sqlitedb", "PII_type": "USERNAME", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I5_Calendar.sqlitedb", "PII_type": "PERSON_NAME", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I5_Calendar.sqlitedb", "PII_type": "POSTAL_ADDRESS", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}

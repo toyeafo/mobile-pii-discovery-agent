@@ -1,0 +1,5 @@
+{"db_path": "selectedDBs\\I4_History.db", "PII_type": "EMAIL", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I4_History.db", "PII_type": "PHONE", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I4_History.db", "PII_type": "USERNAME", "PII": ["17ebu7rghueusrylzr6u3ccjwmmqprk28k", "a&e nails", "hersheypark hours", "hersheypark tickets"], "Num_of_PII": 4, "source_columns": ["history_event_listeners.listener_name", "history_items.url", "history_tags.identifier", "history_visits.title"], "Num_of_source_columns": 4}
+{"db_path": "selectedDBs\\I4_History.db", "PII_type": "PERSON_NAME", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\I4_History.db", "PII_type": "POSTAL_ADDRESS", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}

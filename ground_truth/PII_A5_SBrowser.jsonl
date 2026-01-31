@@ -1,3 +1,0 @@
-{"db_path": "selectedDBs\\A5_SBrowser.db", "PII Type": "Email", "PII": ["sharononeil368@gmail.com"], "Num_of_PII": 1, "source_columns": ["ACCOUNT_NAME"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A5_SBrowser.db", "PII Type": "Email", "PII": ["sharononeil368@gmail.com"], "Num_of_PII": 1, "source_columns": ["account_name"], "num_of_source_columns": 1}
-{"db_path": "selectedDBs\\A5_SBrowser.db", "PII Type": "Email", "PII": ["sharononeil368@gmail.com", "sharononeil368@gmail.com", "sharononeil368@gmail.com", "sharononeil368@gmail.com"], "Num_of_PII": 4, "source_columns": ["ACCOUNT_NAME"], "num_of_source_columns": 1}

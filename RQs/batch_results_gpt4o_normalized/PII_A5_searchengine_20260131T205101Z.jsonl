@@ -1,0 +1,5 @@
+{"db_path": "selectedDBs\\A5_searchengine.db", "PII_type": "EMAIL", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\A5_searchengine.db", "PII_type": "PHONE", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\A5_searchengine.db", "PII_type": "USERNAME", "PII": ["google", "duckduckgo", "yahoo", "youtube", "bing", "so360", "qwant", "toutiao", "startpage", "shenma", "naver", "yandex", "mailru", "seznam", "yandexru", "daum", "baidu"], "Num_of_PII": 17, "source_columns": ["android_metadata.locale", "searchengine.title", "searchengine.url", "searchengine.image_url", "searchengine.extra1", "searchengine.extra2", "searchengine.extra3"], "Num_of_source_columns": 7}
+{"db_path": "selectedDBs\\A5_searchengine.db", "PII_type": "PERSON_NAME", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\A5_searchengine.db", "PII_type": "POSTAL_ADDRESS", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}

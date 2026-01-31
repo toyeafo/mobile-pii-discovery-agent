@@ -1,0 +1,31 @@
+\begin{table}[th]
+\centering
+\caption{Search space reduction during row-level PII extraction.}
+\label{tab:search_space_reduction}
+\small
+\begin{tabular}{|l|l|p{1.3cm}|p{1.7cm}|p{1.0cm}|}
+\hline
+\textbf{ID} & \textbf{Apps} & \textbf{Candidate Cols (Total)} & \textbf{Cols Scanned (Extraction)} & \textbf{Reduc. (\%)} \\
+\hline
+A1 & WhatsApp & 1637 & 14 & 99.14\% \\
+\hline
+A2 & Snapchat & 848 & 2 & 99.76\% \\
+\hline
+A3 & Telegram & 1197 & 0 & 100.00\% \\
+\hline
+A4 & Google Maps & 80 & 2 & 97.50\% \\
+\hline
+A5 & Samsung Internet & 185 & 11 & 94.05\% \\
+\hline
+I1 & WhatsApp & 328 & 6 & 98.17\% \\
+\hline
+I2 & Contacts & 13 & 13 & 0.00\% \\
+\hline
+I3 & Apple Messages & 186 & 0 & 100.00\% \\
+\hline
+I4 & Safari & 74 & 7 & 90.54\% \\
+\hline
+I5 & Calendar & 541 & 0 & 100.00\% \\
+\hline
+\end{tabular}
+\end{table}

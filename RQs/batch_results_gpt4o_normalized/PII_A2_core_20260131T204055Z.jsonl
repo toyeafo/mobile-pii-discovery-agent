@@ -1,0 +1,5 @@
+{"db_path": "selectedDBs\\A2_core.db", "PII_type": "EMAIL", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}
+{"db_path": "selectedDBs\\A2_core.db", "PII_type": "PHONE", "PII": ["18624338329"], "Num_of_PII": 1, "source_columns": ["configetag.etag", "configrule.config_id", "deltaforcesync.client_key", "preferences.key", "snapuserstore.textval", "snapchatuserproperties.textval", "android_metadata.locale"], "Num_of_source_columns": 7}
+{"db_path": "selectedDBs\\A2_core.db", "PII_type": "USERNAME", "PII": ["oneil3607", "sharononeil368", "no_skin_tone", "static_image", "memories_and_camera_roll"], "Num_of_PII": 5, "source_columns": ["snapuserstore.textval", "snapchatuserproperties.textval"], "Num_of_source_columns": 2}
+{"db_path": "selectedDBs\\A2_core.db", "PII_type": "PERSON_NAME", "PII": ["sharon oneil"], "Num_of_PII": 1, "source_columns": ["preferences.stringvalue", "snapuserstore.textval", "snapchatuserproperties.textval"], "Num_of_source_columns": 3}
+{"db_path": "selectedDBs\\A2_core.db", "PII_type": "POSTAL_ADDRESS", "PII": [], "Num_of_PII": 0, "source_columns": [], "Num_of_source_columns": 0}

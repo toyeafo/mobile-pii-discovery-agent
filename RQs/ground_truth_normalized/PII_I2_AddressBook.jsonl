@@ -1,7 +1,0 @@
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["first+last"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["value"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["value"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["c17email"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["c0first+c1last+c2middle"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["value"], "Num_of_source_columns": 1}
-{"db_path": "selectedDBs\\I2_AddressBook.sqlitedb", "PII_type": "", "PII": [], "Num_of_PII": 0, "source_columns": ["c18address"], "Num_of_source_columns": 1}

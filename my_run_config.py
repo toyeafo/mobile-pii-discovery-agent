@@ -1,13 +1,13 @@
 db_files = [
     # "test2.db",
     # "users.db",
-    "A1_commerce.db",
-    "A1_msgstore.db",
-    "A1_wa.db",
-    "A2_core.db",
-    "A2_journal.db",
-    "A2_main.db",
-    "A3_account1cache4.db",
+    # "A1_commerce.db",
+    # "A1_msgstore.db",
+    # "A1_wa.db",
+    # "A2_core.db",
+    # "A2_journal.db",
+    # "A2_main.db",
+    # "A3_account1cache4.db",
     "A3_account2cache4.db",
     "A3_account3cache4.db",
     "A4_gmm_myplaces.db",
@@ -42,7 +42,8 @@ PII_CONFIG = {
     "USERNAME": {
         "type":"username",
         "regex": r"\b[a-zA-Z][a-zA-Z0-9._-]{2,51}\b",
-        "desc": " unique, whitespace-free alphanumeric string used as a system-internal identifier or public handle that lacks a domain suffix, distinguishing it from an email address while still serving as a primary anchor for account attribution."
+        "desc": "a username is a short textual identifier chosen by a user to represent their account or public handle within an application or service it is stored as plain text contains no whitespace does not include a domain component and is intended for human recognition rather than internal system uniqueness"
+
     },
     "PERSON_NAME": {
         "type":"person name",
